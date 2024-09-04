@@ -1,13 +1,41 @@
-
+# my_project/model_training.py
 
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten
-from tensorflow.keras.applications import VGG16
+from tensorflow.keras.applications import VGG16, ResNet50, EfficientNetB0
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 
 def build_vgg16_model(input_shape):
     base_model = VGG16(weights=None, include_top=False, input_shape=input_shape)
+    model = Sequential([
+        base_model,
+        Flatten(),
+        Dense(512, activation='relu'),
+        Dense(256, activation='relu'),
+        Dense(128, activation='relu'),
+        Dense(2, activation='softmax')
+    ])
+    return model
+
+def build_resnet50_model(input_shape):
+    base_model = ResNet50(weights='imagenet', include_top=False, input_shape=input_shape)
+    for layer in base_model.layers:
+        layer.trainable = False
+    model = Sequential([
+        base_model,
+        Flatten(),
+        Dense(512, activation='relu'),
+        Dense(256, activation='relu'),
+        Dense(128, activation='relu'),
+        Dense(2, activation='softmax')
+    ])
+    return model
+
+def build_efficientnet_model(input_shape):
+    base_model = EfficientNetB0(weights='imagenet', include_top=False, input_shape=input_shape)
+    for layer in base_model.layers:
+        layer.trainable = False
     model = Sequential([
         base_model,
         Flatten(),
