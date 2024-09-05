@@ -1,0 +1,7 @@
+train: /kaggle/input/yolov007/a5/train/images
+val: /kaggle/input/yolov007/a5/valid/images
+
+
+nc: 3
+names: ['BENIGN', 'BENIGN_WITHOUT_CALLBACK', 'MALIGNANT']
+
