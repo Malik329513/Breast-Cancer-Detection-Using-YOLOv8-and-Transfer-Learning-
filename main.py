@@ -1,4 +1,4 @@
-# my_project/main.py
+
 
 from my_project.data_loader import load_csv, filter_images_by_description, replace_image_dir
 from my_project.data_cleaning import clean_dicom_data, rename_columns, convert_to_category
