@@ -1,0 +1,84 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+.env/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Kaggle specific
+/kaggle/working/
+/kaggle/input/
+/kaggle/output/
+/kaggle/working/output_image.png
+/kaggle/working/output_images/
+/kaggle/output/
+
+# TensorFlow and Keras models and checkpoints
+*.h5
+*.hdf5
+*.ckpt
+*.keras
+checkpoints/
+logs/
+saved_model/
+*.tflite
+
+# Pytest cache
+.cache/
+.pytest_cache/
+
+# Unit test / coverage reports
+*.cover
+.coverage
+*.log
+.cache
+nosetests.xml
+coverage.xml
+*.coveragerc
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# IDE-specific settings
+.idea/
+.vscode/
+
+# Machine learning artifacts
+*.pkl
+*.joblib
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Anaconda
+.conda/
