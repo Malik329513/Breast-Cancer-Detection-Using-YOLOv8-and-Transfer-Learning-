@@ -16,8 +16,6 @@ This project aims to detect breast cancer using a combination of traditional ima
 - [YOLOv8 Training](#yolov8-training)
 - [Usage](#usage)
 - [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - Image Preprocessing (CLAHE, Haze Reduction, Grayscale Conversion)
@@ -40,7 +38,6 @@ This project aims to detect breast cancer using a combination of traditional ima
 3. Install dependencies
    ```bash
    pip install -r requirements.txt
-
 
 ## Dataset
 The project uses the [CBIS-DDSM Breast Cancer Image Dataset](https://www.cancerimagingarchive.net). It contains full mammogram images, cropped images, and ROI mask images. The dataset includes information on pathology, calcification types, and other metadata.
@@ -71,23 +68,36 @@ YOLOv8 was used for object detection to identify specific regions of interest (R
 
    ```bash
    # Command to start training
-   yolo train data=your_data.yaml model=yolov8n.pt epochs=100 imgsz=640 batch=16 lr0=0.01
+   train_data=data.yaml model=yolov8n.pt epochs=100 imgsz=640 batch=16 lr0=0.01
 
 ## Usage
 To run the project and make predictions:
 1. **Train the model**:
    ```bash
-   python my_project/main.py
+   python main.py
 
 ## Results
-The following results were obtained using the VGG16 model:
-- **Accuracy**: 92%
-- **Precision**: 89%
-- **Recall**: 88%
-- **F1 Score**: 87%
+The following results were obtained using different CNN architectures for breast cancer detection:
 
-![Confusion Matrix](path_to_confusion_matrix_image.png)
+| CNN Architecture   | Overall Accuracy | Precision | Recall  | F1 Score |
+|--------------------|------------------|-----------|---------|----------|
+| VGG16              | 59.79%           | 61.20%    | 60.01%  | 60.00%   |
+| ResNet50 (TL)      | 67.00%           | 67.21%    | 67.00%  | 67.00%   |
+| EfficientNetB0 (TL)| 65.87%           | 65.10%    | 66.04%  | 65.00%   |
 
-YOLOv8 successfully detected ROIs with high confidence.
+**Summary**:
+- **VGG16**: Achieved an overall accuracy of 59.79%, with a precision of 61.20% and F1 score of 60.00%.
+- **ResNet50 (Transfer Learning)**: Performed better, with an accuracy of 67.00% and a balanced precision, recall, and F1 score.
+- **EfficientNetB0 (Transfer Learning)**: Achieved 65.87% accuracy, with balanced metrics in precision and recall.
 
-  
+
+**YOLOv8** successfully detected ROIs.
+
+| CNN Architecture   | Overall Accuracy | Precision | Recall  | F1 Score |
+|--------------------|------------------|-----------|---------|----------|
+| yolov8             | 55.47%           | 49.72%    | 55.47%  | 52.34%   |
+
+- Achieved 55.47% accuracy, with a lower precision (49.72%) and F1 score (52.34%), but showed reasonable recall for object detection tasks.
+
+![image](https://github.com/user-attachments/assets/967f7ec8-856e-49f1-a71f-97192ed5615a)
+
