@@ -98,7 +98,8 @@ The following results were obtained using different CNN architectures for breast
 | yolov8             | 55.47%           | 49.72%    | 55.47%  | 52.34%   |
 
 - Achieved 55.47% accuracy, with a lower precision (49.72%) and F1 score (52.34%), but showed reasonable recall for object detection tasks.
-- 
+
 **YOLOv8** successfully detected ROIs.
+  
 ![image](https://github.com/user-attachments/assets/967f7ec8-856e-49f1-a71f-97192ed5615a)
 
